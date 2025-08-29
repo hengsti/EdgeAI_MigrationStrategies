@@ -1,0 +1,15 @@
+FROM python:3.12
+
+LABEL name="P2 Simulation - Transfer Strategies in intermittent Edge AI environments"
+
+RUN apt-get update && apt-get install -y \
+    curl \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY . /workspace/
+
+WORKDIR /workspace/
+
+RUN pip install --upgrade pip && \
+    pip install -r /workspace/requirements.txt

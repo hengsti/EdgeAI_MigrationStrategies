@@ -1,0 +1,40 @@
+simulation:
+  steps: 1000
+  tick_duration: 1
+  tick_unit: seconds
+
+info: false
+debug: false
+format_logs: false
+
+topology: test
+strategy: reactive
+offloading: model
+
+proactive:
+  min_power_threshold: 25.00
+
+reactive:
+  max_services_per_device: 8
+
+oracle:
+  max_services_per_device: 20
+
+loadbalancing: true
+
+battery:
+  enabled: false
+  characteristics:
+    ampere_hours: 2.7
+    voltage: 5.1
+    efficiency: 0.8
+    initial_charge: 0.2
+    depth_of_discharge: 0.25
+  power_required: 50.00
+
+compute_energydata: false
+
+server_id: 1
+edge_device_ids:
+  test: [2, 3, 4, 5]
+  prod: [2, 3, 4, 5, 6, 7, 8, 9, 10]

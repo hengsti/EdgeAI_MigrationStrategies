@@ -1,0 +1,30 @@
+{
+  "name": "P2 VS Code Dev Container",
+  "build": {
+      "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.pylint",
+        "ms-python.isort",
+        "ms-python.debugpy",
+        "kevinrose.vsc-python-indent",
+        "donjayamanne.python-environment-manager",
+        "eamodio.gitlens",
+        "ms-toolsai.datawrangler",
+        "ms-toolsai.jupyter",
+        "PKief.material-icon-theme"
+      ]
+    }
+  },
+  "workspaceFolder": "/workspace",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  ]
+}

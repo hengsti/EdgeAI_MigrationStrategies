@@ -1,0 +1,14 @@
+.vscode
+*__pycache__/
+*pytest*
+app/logs/*msgpack
+app/logs/logs_formatted/oracle/model/
+app/logs/logs_formatted/oracle/data/
+app/logs/logs_formatted/proactive/model/
+app/logs/logs_formatted/proactive/data/
+app/logs/logs_formatted/reactive/model/
+app/logs/logs_formatted/reactive/data/
+app/debug/
+app/utils/logfiles/
+analyse_battery.py
+~$*

@@ -1,0 +1,350 @@
+{
+    "NetworkSwitch": [
+
+    ],
+    "NetworkLink": [
+        
+    ],
+    "BaseStation": [
+        {
+            "attributes": {
+                "id": 1,
+                "coordinates": [0, 0],
+                "active": true
+            },
+            "relationships": {
+                "edge_server": {
+                    "class": "EdgeServer",
+                    "id": 1
+                }
+            }
+        },
+        {
+            "attributes": {
+                "id": 2,
+                "coordinates": [0, 1],
+                "active": true
+            },
+            "relationships": {
+                "raspberry_pi": {
+                    "class": "EdgeServer",
+                    "id": 2
+                }
+            }
+        },
+        {
+            "attributes": {
+                "id": 3,
+                "coordinates": [0, 2],
+                "active": true
+            },
+            "relationships": {
+                "raspberry_pi": {
+                    "class": "EdgeServer",
+                    "id": 3
+                }
+            }
+        },
+        {
+            "attributes": {
+                "id": 4,
+                "coordinates": [1, 0],
+                "active": true
+            },
+            "relationships": {
+                "raspberry_pi": {
+                    "class": "EdgeServer",
+                    "id": 4
+                }
+            }
+        },
+        {
+            "attributes": {
+                "id": 5,
+                "coordinates": [1, 1],
+                "active": true
+            },
+            "relationships": {
+                "raspberry_pi": {
+                    "class": "EdgeServer",
+                    "id": 5
+                }
+            }
+        }
+    ],
+    "EdgeServer": [
+        {
+            "attributes": {
+                "id": 1,
+                "available": true,
+                "model_type": "server_centralized",
+                "model_name": "Centralized Server",
+                "status": {
+                    "active": true,
+                    "state": "on"
+                },
+                "partner_devices": [],
+                "transfer_model": {
+                    "transfer": false
+                },
+                "connection": "LoRaWAN",
+                "actual_power": 300,
+                "power_source": "wired",
+                "temperature_measurement": []
+            },
+            "relationships": {
+                "base_station": {
+                    "class": "BaseStation",
+                    "id": 1
+                },
+                "services": []
+            }
+        }, 
+        {
+            "attributes": {
+                "id": 2,
+                "available": false,
+                "model_type": "edge_device",
+                "model_name": "EdgeDevice 1 - RPi5",
+                "status": {
+                    "active": false,
+                    "state": "off"
+                },
+                "specifications": {
+                    "cpu_cores": 4,
+                    "reserved_cpu_cores": 1
+                },
+                "partner_devices": [3, 4, 5],
+                "transfer_model": {
+                    "transfer": false
+                },
+                "connection": "LoRaWAN",
+                "actual_power": 0,
+                "power_source": "none",
+                "temperature_measurement": []
+            },
+            "relationships": {
+                "base_station": {
+                    "class": "BaseStation",
+                    "id": 2
+                },
+                "services": [
+                    {
+                        "class": "Service",
+                        "id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "attributes": {
+                "id": 3,
+                "available": false,
+                "model_type": "edge_device",
+                "model_name": "EdgeDevice 2 - RPi5",
+                "status": {
+                    "active": false,
+                    "state": "off"
+                },
+                "specifications": {
+                    "cpu_cores": 4,
+                    "reserved_cpu_cores": 1
+                },
+                "partner_devices": [4, 5, 2],
+                "transfer_model": {
+                    "transfer": false
+                },
+                "connection": "LoRaWAN",
+                "actual_power": 0,
+                "power_source": "none",
+                "temperature_measurement": []
+            },
+            "relationships": {
+                "base_station": {
+                    "class": "BaseStation",
+                    "id": 3
+                },
+                "services": [
+                    {
+                        "class": "Service",
+                        "id": 2
+                    }
+                ]
+            }
+        },
+        {
+            "attributes": {
+                "id": 4,
+                "available": false,
+                "model_type": "edge_device",
+                "model_name": "EdgeDevice 3 - RPi5",
+                "status": {
+                    "active": false,
+                    "state": "off"
+                },
+                "specifications": {
+                    "cpu_cores": 4,
+                    "reserved_cpu_cores": 1
+                },
+                "partner_devices": [5, 2, 3],
+                "transfer_model": {
+                    "transfer": false
+                },
+                "connection": "LoRaWAN",
+                "actual_power": 0,
+                "power_source": "none",
+                "temperature_measurement": []
+            },
+            "relationships": {
+                "base_station": {
+                    "class": "BaseStation",
+                    "id": 4
+                },
+                "services": [
+                    {
+                        "class": "Service",
+                        "id": 3
+                    }
+                ]
+            }
+        },
+        {
+            "attributes": {
+                "id": 5,
+                "available": false,
+                "model_type": "edge_device",
+                "model_name": "EdgeDevice 4 - RPi5",
+                "status": {
+                    "active": false,
+                    "state": "off"
+                },
+                "specifications": {
+                    "cpu_cores": 4,
+                    "reserved_cpu_cores": 1
+                },
+                "partner_devices": [2, 3, 4],
+                "transfer_model": {
+                    "transfer": false
+                },
+                "connection": "LoRaWAN",
+                "actual_power": 0,
+                "power_source": "none",
+                "temperature_measurement": []
+            },
+            "relationships": {
+                "base_station": {
+                    "class": "BaseStation",
+                    "id": 5
+                },
+                "services": [
+                    {
+                        "class": "Service",
+                        "id": 4
+                    }
+                ]
+            }
+        }
+    ],
+    "Service": [
+        {
+            "attributes": {
+                "id": 1,
+                "label": "AI Model - 1",
+                "size": 1000,
+                "state": "init",
+                "program_counter": 0,
+                "transfer": false,
+                "transfer_duration": 1,
+                "transfer_time_start": 0,
+                "transfer_time_end": 0,
+                "trained": false,
+                "max_training_time": 100,
+                "actual_training_time": 0,
+                "max_prediction_time": 20,
+                "actual_prediction_time": 0,
+                "predictions_counter": 0
+            },
+            "relationships": {
+                "server": {
+                    "class": "EdgeServer",
+                    "id": 2
+                }
+            }
+        },
+        {
+            "attributes": {
+                "id": 2,
+                "label": "AI Model - 2",
+                "size": 1000,
+                "state": "init",
+                "program_counter": 0,
+                "transfer": false,
+                "transfer_duration": 2,
+                "transfer_time_start": 0,
+                "transfer_time_end": 0,
+                "trained": false,
+                "max_training_time": 50,
+                "actual_training_time": 0,
+                "max_prediction_time": 50,
+                "actual_prediction_time": 0,
+                "predictions_counter": 0
+            },
+            "relationships": {
+                "server": {
+                    "class": "EdgeServer",
+                    "id": 3
+                }
+            }
+        },
+        {
+            "attributes": {
+                "id": 3,
+                "label": "AI Model - 3",
+                "size": 1000,
+                "state": "init",
+                "program_counter": 0,
+                "transfer": false,
+                "transfer_duration": 2,
+                "transfer_time_start": 0,
+                "transfer_time_end": 0,
+                "trained": false,
+                "max_training_time": 150,
+                "actual_training_time": 0,
+                "max_prediction_time": 25,
+                "actual_prediction_time": 0,
+                "predictions_counter": 0
+            },
+            "relationships": {
+                "server": {
+                    "class": "EdgeServer",
+                    "id": 4
+                }
+            }
+        },
+        {
+            "attributes": {
+                "id": 4,
+                "label": "AI Model - 4",
+                "size": 1000,
+                "state": "init",
+                "program_counter": 0,
+                "transfer": false,
+                "transfer_duration": 2,
+                "transfer_time_start": 0,
+                "transfer_time_end": 0,
+                "trained": false,
+                "max_training_time": 15,
+                "actual_training_time": 0,
+                "max_prediction_time": 3,
+                "actual_prediction_time": 0,
+                "predictions_counter": 0
+            },
+            "relationships": {
+                "server": {
+                    "class": "EdgeServer",
+                    "id": 5
+                }
+            }
+        }
+    ]
+}

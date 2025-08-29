@@ -1,0 +1,9 @@
+git+https://github.com/EdgeSimPy/EdgeSimPy.git@v1.1.0#egg=edge-sim-py
+pandas==2.2.3
+numpy==2.2.1
+matplotlib==3.10.0
+openpyxl==3.1.5
+ipykernel==6.29.5
+loguru==0.7.3
+pyarrow==19.0.1
+pytest==8.3.5
