@@ -25,9 +25,3 @@ docker build -t p2-migration .
 ```shell
 docker run --rm -it --name p2-migration p2-migration /bin/bash
 ```
-
-## Startup Simulation
-
-```shell
-python main.py
-```
