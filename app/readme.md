@@ -1,3 +1,9 @@
+## Starting a simulation run
+
+```python
+python main.py
+```
+
 ## Simulation Configuration
 
 The following options control the simulation behavior. These settings are found in the `config.yaml` file.
