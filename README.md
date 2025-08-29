@@ -17,11 +17,11 @@ Open Folder and build the Dev Container from `devcontainer.json` with the comman
 **Build:**
 
 ```shell
-docker build -t p2-migration .
+docker build -t edgeAI-migration-strategies .
 ```
 
 **Run:**
 
 ```shell
-docker run --rm -it --name p2-migration p2-migration /bin/bash
+docker run --rm -it --name edgeAI-migration-strategies edgeAI-migration-strategies /bin/bash
 ```
