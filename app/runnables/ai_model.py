@@ -69,7 +69,6 @@ class AIModel:
             )
             return
 
-        # Train the model
         service.actual_training_time += 1
         logger.bind(ai_model=True).debug(
             "Training Model {} at timestamp: {}",

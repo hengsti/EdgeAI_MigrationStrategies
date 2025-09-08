@@ -1,6 +1,6 @@
 FROM python:3.12
 
-LABEL name="P2 Simulation - Transfer Strategies in intermittent Edge AI environments"
+LABEL name="EdgeAI - Migration Strategies"
 
 RUN apt-get update && apt-get install -y \
     curl \

@@ -1,3 +1,5 @@
+# Simulation Running Details
+
 ## Prerequisites
 
 Installed Docker Demon or Podman Machine
@@ -8,7 +10,7 @@ To run Dev Containers in VS Code the following extension needs to be installed i
 
 Open Folder and build the Dev Container from `devcontainer.json` with the command in the VS Code Search bar:
 
-```
+```shell
 >Dev Containers: Rebuild Container without Cache
 ```
 

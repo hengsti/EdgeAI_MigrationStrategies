@@ -13,10 +13,9 @@ def clean_data(data: pd.Series) -> pd.Series:
     Returns:
         pd.Series: The cleaned data.
     """
-    # Convert to numeric, coercing errors to NaN
     numeric_data = pd.to_numeric(data, errors='coerce')
-    # Fill NaN values with 0 or another appropriate value
     cleaned_data = numeric_data.fillna(0)
+    
     return cleaned_data
 
 def load_energy_data(file: str, filetype: str) -> pd.Series:
@@ -123,11 +122,3 @@ def load_energy_data_parquet(file: str) -> tuple[pd.Series, pd.Series]:
     """
     df = pd.read_parquet(file)
     return df["WindPower(W)"], df["SolarPower(W)"]
-
-
-# if __name__ == "__main__":
-#     wind_speed, solar_energy = load_energy_data("./data/Weather Data 2014-11-30.xlsx", "excel")
-#     wind_power = calc_actual_wind_power(wind_speed)
-#     solar_power = calc_actual_solar_power(solar_energy)
-#     store_data_in_file(wind_power, solar_power)
-#     logger.info("Energy data processing completed.")

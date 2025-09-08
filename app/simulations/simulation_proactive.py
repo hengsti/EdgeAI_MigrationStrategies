@@ -34,7 +34,6 @@ class SimulationProactive(SimulationBase):
 
         all_devices, server, all_services = super().get_components()
 
-        # Edge Device processing
         for edge_device in all_devices:
             if edge_device.id in self.edge_device_ids:
                 Device.modify_power(edge_device, self.harvester, current_timestep, self.power_required)
@@ -59,7 +58,6 @@ class SimulationProactive(SimulationBase):
                         harvester=self.harvester
                     )
 
-        # NEW Server processing
         results = Device.transfer_to_edge_device(
             server=server,
             all_edge_devices=all_devices,

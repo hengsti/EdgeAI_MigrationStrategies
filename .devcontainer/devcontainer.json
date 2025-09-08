@@ -1,5 +1,5 @@
 {
-  "name": "P2 VS Code Dev Container",
+  "name": "VS Code Dev Container",
   "build": {
       "dockerfile": "Dockerfile"
   },
